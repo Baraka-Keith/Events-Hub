@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact EventHub UK - Get in touch with our team for event inquiries and support">
+    <meta name="keywords" content="contact, support, event inquiries, UK events, EventHub">
+    <title>Contact Us - EventHub UK</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="static/css/contact.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="img/logo.png" alt="EventHub Logo">
+                <span>EventHub</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Get in Touch</h1>
+            <p>Have questions about our events or need support? We're here to help!</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-item-content">
+                    <h4>Address</h4>
+                    <p>Regent Street<br>London, EC1A 1BB<br>United Kingdom</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div class="contact-item-content">
+                    <h4>Phone</h4>
+                    <p>+44 20 7814 7568</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div class="contact-item-content">
+                    <h4>Email</h4>
+                    <p>info@eventhub.co.uk</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <div class="contact-item-content">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <div class="success-message">
+                Thank you for your message! We'll get back to you shortly.
+            </div>
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                    <div class="error-message" id="nameError">Please enter a valid name (letters and spaces only)</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control">
+                    <div class="error-message" id="phoneError">Please enter a valid UK phone number</div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control" required>
+                    <div class="error-message" id="subjectError">Please enter a subject</div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" rows="5" required></textarea>
+                    <div class="error-message" id="messageError">Please enter your message</div>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>EventHub</h3>
+                <p>Your gateway to professional growth and networking across the UK.</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email">
+                    <button class="newsletter-button">Subscribe</button>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="events.html">Browse Events</a>
+                <a href="#">How It Works</a>
+                <a href="#">Pricing</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="#">Blog</a>
+                <a href="#">FAQs</a>
+                <a href="#">Support</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +44 20 7814 7568</p>
+                <p><i class="fas fa-envelope"></i> info@eventhub.co.uk</p>
+                <p><i class="fas fa-map-marker-alt"></i> Regent Street, London, UK</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const successMessage = document.querySelector('.success-message');
+
+            // Validation patterns
+            const patterns = {
+                name: /^[A-Za-z\s]{2,}$/,
+                email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                phone: /^(\+44|0)?[0-9]{10,11}$/,
+            };
+
+            // Real-time validation
+            form.querySelectorAll('input, textarea').forEach(input => {
+                input.addEventListener('input', function() {
+                    validateField(this);
+                });
+
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+
+            function validateField(field) {
+                const errorElement = document.getElementById(`${field.id}Error`);
+                
+                if (!errorElement) return;
+
+                let isValid = true;
+                let errorMessage = '';
+
+                if (field.required && !field.value.trim()) {
+                    isValid = false;
+                    errorMessage = `Please enter your ${field.id}`;
+                } else if (patterns[field.id] && !patterns[field.id].test(field.value)) {
+                    isValid = false;
+                    errorMessage = errorElement.textContent;
+                }
+
+                field.classList.toggle('error', !isValid);
+                errorElement.style.display = isValid ? 'none' : 'block';
+                errorElement.textContent = errorMessage;
+
+                return isValid;
+            }
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                form.querySelectorAll('input, textarea').forEach(field => {
+                    if (!validateField(field)) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    // In a real application, you would send the form data to a server here
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
