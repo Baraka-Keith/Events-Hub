@@ -17,16 +17,16 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="<?= e($basePath ?? '') ?>events.php">Browse Events</a>
-                <a href="<?= e($basePath ?? '') ?>how_it_works.html">How It Works</a>
-                <a href="<?= e($basePath ?? '') ?>pricing.html">Pricing</a>
+                <a href="<?= e($basePath ?? '') ?>how_it_works.php">How It Works</a>
+                <a href="<?= e($basePath ?? '') ?>pricing.php">Pricing</a>
                 <a href="<?= e($basePath ?? '') ?>contact.php">Contact Us</a>
             </div>
             <div class="footer-section">
                 <h3>Resources</h3>
-                <a href="<?= e($basePath ?? '') ?>blog.html">Blog</a>
-                <a href="<?= e($basePath ?? '') ?>faq.html">FAQs</a>
+                <a href="<?= e($basePath ?? '') ?>blog.php">Blog</a>
+                <a href="<?= e($basePath ?? '') ?>faq.php">FAQs</a>
                 <a href="<?= e($basePath ?? '') ?>support.php">Support</a>
-                <a href="<?= e($basePath ?? '') ?>terms.html">Terms &amp; Conditions</a>
+                <a href="<?= e($basePath ?? '') ?>terms.php">Terms &amp; Conditions</a>
             </div>
             <div class="footer-section">
                 <h3>Admin</h3>
