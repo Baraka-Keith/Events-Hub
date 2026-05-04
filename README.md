@@ -2,9 +2,9 @@
 
 An event booking website that promotes professional events across the UK.
 
-## Sprint 2 Full-Stack Version
+## Sprint 2 Project Update
 
-This branch upgrades Theo's updated front-end prototype into a XAMPP/PHP/MySQL working prototype.
+This branch upgrades Theo's updated front-end work into a XAMPP/PHP/MySQL working version with database-backed event, booking, support, and admin features.
 
 Main pages:
 
@@ -36,7 +36,7 @@ Email handling:
 
 - Login codes and booking tickets are generated as email records in `email_outbox`.
 - Real sending is disabled by default through `APP_SEND_REAL_EMAIL = false` in `config/database.php`.
-- This keeps the coursework demo safe while still proving the email workflow exists.
+- This keeps the local demo safe while still proving the email workflow exists.
 
 ## How the Marker Can Access the Project
 

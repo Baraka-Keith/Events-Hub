@@ -1,4 +1,4 @@
-# EventHub UK - MMP Sprint 2 Full-Stack Setup
+# EventHub UK - MMP Sprint 2 Setup
 
 This folder is for Portfolio 2 / MMP Sprint 2. It is separate from MVP Sprint 1 evidence.
 
@@ -6,7 +6,7 @@ This folder is for Portfolio 2 / MMP Sprint 2. It is separate from MVP Sprint 1 
 
 - `main`: original MVP-style project from the first repository commit.
 - `theo-site-updates`: Theo's updated front-end branch with improved navigation, booking flow pages, new public pages, and prototype admin pages.
-- `codex/mmp-sprint2-fullstack`: Sprint 2 working branch built on Theo's updates. This adds PHP, MySQL, real form submissions, booking records, support records, and database-backed admin pages.
+- `eventhub-mmp-sprint2-update`: Sprint 2 working branch built on Theo's updates. This adds PHP, MySQL, real form submissions, booking records, support records, and database-backed admin pages.
 
 ## XAMPP/phpMyAdmin Setup
 
@@ -60,7 +60,7 @@ This folder is for Portfolio 2 / MMP Sprint 2. It is separate from MVP Sprint 1 
 - Added demo login verification code step, user-management page, event delete/close controls, and payment-method selection.
 - Added prototype-safe email workflow for login codes and ticket confirmations through an admin email outbox.
 - Added database-backed client/support chat as a scoped enhancement to the support workflow.
-- Preserved Theo's public page improvements while adding full-stack functionality.
+- Preserved Theo's public page improvements while adding database-backed application functionality.
 
 ## Known Scope Boundary
 

@@ -10,13 +10,12 @@ I also improved the booking journey. Users can browse events, open event details
 
 On the admin side, I replaced the prototype-only idea with database-backed pages. The dashboard now displays live counts for total events, bookings, revenue, and open support requests. The booking page lists real bookings and allows their status to be updated. The support page lists support requests submitted by users and allows status tracking. The events page shows event records and includes a basic add-event form. These changes make the system more credible as a business prototype because staff can monitor activity and manage user requests.
 
-This work responds to Sprint 1 feedback by showing clearer technical growth and a stronger connection between repository evidence and demonstrated features. The final system still has limitations, including the need for secure admin authentication, payment processing, and email confirmations in a production version. However, for the Sprint 2 MMP scope, the project now demonstrates a meaningful full-stack event booking workflow with a suitable database and admin management features.
+This work responds to Sprint 1 feedback by showing clearer technical growth and a stronger connection between repository evidence and demonstrated features. The final system still has limitations, including the need for secure admin authentication, payment processing, and email confirmations in a production version. However, for the Sprint 2 MMP scope, the project now demonstrates a meaningful event booking workflow with a suitable database and admin management features.
 
 Evidence to include:
 
-1. Screenshot of the `codex/mmp-sprint2-fullstack` branch in GitHub or VS Code source control.
+1. Screenshot of the `eventhub-mmp-sprint2-update` branch in GitHub or VS Code source control.
 2. Screenshot of `database/eventhub_uk.sql` or phpMyAdmin tables.
 3. Screenshot of a public booking confirmation page.
 4. Screenshot of the same booking in `admin/bookings.php`.
 5. Screenshot of the support form and `admin/support.php` support queue.
-
