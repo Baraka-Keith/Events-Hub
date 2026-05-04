@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TechConnect 2025 - Premier Tech Conference in London">
-    <meta name="keywords" content="TechConnect, tech conference, London events, technology summit">
-    <title>TechConnect 2025 - EventHub UK</title>
+    <meta name="description" content="EventHub UK - Event Details">
+    <meta name="keywords" content="events, conferences, workshops, UK events, professional development">
+    <title>Event Details - EventHub UK</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/event_details.css">
   </head>
@@ -20,7 +20,7 @@
           <li><a href="home.html">Home</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="#" class="cta-button">Book Now</a></li>
+          <li><a id="headerBookBtn" href="booking.html?event=TechConnect%202025" class="cta-button">Book Now</a></li>
         </ul>
       </nav>
     </header>
@@ -28,32 +28,34 @@
     <main class="event-detail">
       <div class="event-header">
         <div class="event-image-container">
-          <img src="img/techeu-summit-25-1-987.webp" alt="TechConnect 2025" class="event-image">
+          <img id="eventImage" src="img/techeu-summit-25-1-987.webp" alt="Event" class="event-image">
         </div>
         <div class="event-info">
-          <span class="event-category">Technology</span>
-          <h1 class="event-title">TechConnect 2025</h1>
+          <span id="eventCategory" class="event-category">Technology</span>
+          <h1 id="eventTitle" class="event-title">TechConnect 2025</h1>
+
           <div class="event-meta">
             <div class="meta-item">
               <i class="fas fa-calendar"></i>
-              <span>March 15, 2025</span>
+              <span id="eventDate">March 15, 2025</span>
             </div>
             <div class="meta-item">
               <i class="fas fa-clock"></i>
-              <span>9:00 AM - 6:00 PM</span>
+              <span id="eventTime">9:00 AM - 6:00 PM</span>
             </div>
             <div class="meta-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>ExCeL London</span>
+              <span id="eventLocation">ExCeL London</span>
             </div>
             <div class="meta-item">
               <i class="fas fa-users"></i>
-              <span>2000+ Attendees</span>
+              <span id="eventAttendees">2000+ Attendees</span>
             </div>
           </div>
+
           <div class="ticket-info">
-            <div class="price">£599</div>
-            <a href="#" class="book-button">Book Your Ticket</a>
+            <div id="eventPrice" class="price">From £249</div>
+            <a id="bookButton" href="booking.html?event=TechConnect%202025" class="book-button">Book Your Ticket</a>
           </div>
         </div>
       </div>
@@ -62,13 +64,17 @@
         <div class="main-content">
           <div class="event-details-section">
             <h2 class="section-title">About the Event</h2>
-            <p class="event-description">Join us for the UK's premier tech conference, TechConnect 2025, where industry leaders, innovators, and tech enthusiasts come together to explore the latest developments in technology. This immersive one-day event features keynote speeches, interactive workshops, and unparalleled networking opportunities.</p>
-            <p class="event-description">Discover cutting-edge innovations, gain insights from industry experts, and connect with like-minded professionals in the heart of London's tech scene. Whether you're a seasoned professional or just starting your tech journey, TechConnect 2025 offers valuable learning experiences for everyone.</p>
+            <p id="eventDescription1" class="event-description">
+              Join us for the UK's premier tech conference, where industry leaders, innovators, and tech enthusiasts come together to explore the latest developments in technology.
+            </p>
+            <p id="eventDescription2" class="event-description">
+              Discover cutting-edge innovations, gain insights from industry experts, and connect with like-minded professionals through a day of valuable sessions and networking.
+            </p>
           </div>
 
           <div class="event-details-section">
             <h2 class="section-title">Event Schedule</h2>
-            <ul class="event-schedule">
+            <ul id="eventSchedule" class="event-schedule">
               <li class="schedule-item">
                 <div class="schedule-time">9:00 AM</div>
                 <div class="schedule-content">
@@ -76,72 +82,49 @@
                   <p>Start your day with coffee and connections</p>
                 </div>
               </li>
-              <li class="schedule-item">
-                <div class="schedule-time">10:00 AM</div>
-                <div class="schedule-content">
-                  <h4>Opening Keynote: The Future of Tech</h4>
-                  <p>By Sarah Johnson, CEO of TechVision Global</p>
-                </div>
-              </li>
-              <li class="schedule-item">
-                <div class="schedule-time">11:30 AM</div>
-                <div class="schedule-content">
-                  <h4>AI & Machine Learning Workshop</h4>
-                  <p>Interactive session on practical AI applications</p>
-                </div>
-              </li>
             </ul>
           </div>
 
           <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/VEhxyPA8c4s" title="Voice of Triumph: TechConnect Troops Share Their Journey in 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/VEhxyPA8c4s" title="Event video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
 
         <aside>
           <div class="event-details-section">
             <h2 class="section-title">Featured Speakers</h2>
+
             <div class="speaker">
-              <img src="img/person_2.jpeg" alt="Sarah Johnson" class="speaker-image">
+              <img id="speaker1Img" src="img/person_2.jpeg" alt="Speaker 1" class="speaker-image">
               <div class="speaker-info">
-                <h4>Sarah Johnson</h4>
-                <p>CEO, TechVision Global</p>
+                <h4 id="speaker1Name">Sarah Johnson</h4>
+                <p id="speaker1Role">CEO, TechVision Global</p>
               </div>
             </div>
+
             <div class="speaker">
-              <img src="img/person_3.jpeg" alt="Michael Chen" class="speaker-image">
+              <img id="speaker2Img" src="img/person_3.jpeg" alt="Speaker 2" class="speaker-image">
               <div class="speaker-info">
-                <h4>Michael Chen</h4>
-                <p>AI Research Director, Future Labs</p>
+                <h4 id="speaker2Name">Michael Chen</h4>
+                <p id="speaker2Role">AI Research Director, Future Labs</p>
               </div>
             </div>
+
             <div class="speaker">
-              <img src="img/person_1.jpeg" alt="Emma Davies" class="speaker-image">
+              <img id="speaker3Img" src="img/person_1.jpeg" alt="Speaker 3" class="speaker-image">
               <div class="speaker-info">
-                <h4>Emma Davies</h4>
-                <p>Head of Innovation, Tech Pioneers</p>
+                <h4 id="speaker3Name">Emma Davies</h4>
+                <p id="speaker3Role">Head of Innovation, Tech Pioneers</p>
               </div>
             </div>
           </div>
 
           <div class="event-details-section">
             <h2 class="section-title">Event Highlights</h2>
-            <ul style="list-style: none;">
+            <ul id="eventHighlights" style="list-style: none; padding-left: 0;">
               <li style="margin-bottom: 1rem;">
                 <i class="fas fa-check-circle" style="color: var(--accent-color); margin-right: 0.5rem;"></i>
                 Interactive workshops and hands-on sessions
-              </li>
-              <li style="margin-bottom: 1rem;">
-                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-right: 0.5rem;"></i>
-                Networking opportunities with industry leaders
-              </li>
-              <li style="margin-bottom: 1rem;">
-                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-right: 0.5rem;"></i>
-                Expert-led panel discussions
-              </li>
-              <li style="margin-bottom: 1rem;">
-                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-right: 0.5rem;"></i>
-                Exhibition area featuring latest technologies
               </li>
             </ul>
           </div>
@@ -168,16 +151,16 @@
         <div class="footer-section">
           <h3>Quick Links</h3>
           <a href="events.html">Browse Events</a>
-          <a href="#">How It Works</a>
-          <a href="#">Pricing</a>
+          <a href="how_it_works.html">How It Works</a>
+          <a href="pricing.html">Pricing</a>
           <a href="contact.html">Contact Us</a>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
-          <a href="#">Blog</a>
-          <a href="#">FAQs</a>
-          <a href="#">Support</a>
-          <a href="#">Terms & Conditions</a>
+          <a href="blog.html">Blog</a>
+          <a href="faq.html">FAQs</a>
+          <a href="support.html">Support</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
         </div>
         <div class="footer-section">
           <h3>Contact Info</h3>
@@ -192,6 +175,198 @@
     </footer>
 
     <script>
+      const eventDetailsData = {
+        "TechConnect 2025": {
+          category: "Technology",
+          image: "img/techeu-summit-25-1-987.webp",
+          date: "March 15, 2025",
+          time: "9:00 AM - 6:00 PM",
+          location: "ExCeL London",
+          attendees: "2000+ Attendees",
+          price: "From £249",
+          description1: "Join us for the UK's premier tech conference, where industry leaders, innovators, and tech enthusiasts come together to explore the latest developments in technology.",
+          description2: "Discover cutting-edge innovations, gain insights from industry experts, and connect with like-minded professionals through a day of valuable sessions and networking.",
+          schedule: [
+            { time: "9:00 AM", title: "Registration & Networking Breakfast", text: "Start your day with coffee and connections" },
+            { time: "10:00 AM", title: "Opening Keynote: The Future of Tech", text: "By Sarah Johnson, CEO of TechVision Global" },
+            { time: "11:30 AM", title: "AI & Machine Learning Workshop", text: "Interactive session on practical AI applications" }
+          ],
+          speakers: [
+            { img: "img/person_2.jpeg", name: "Sarah Johnson", role: "CEO, TechVision Global" },
+            { img: "img/person_3.jpeg", name: "Michael Chen", role: "AI Research Director, Future Labs" },
+            { img: "img/person_1.jpeg", name: "Emma Davies", role: "Head of Innovation, Tech Pioneers" }
+          ],
+          highlights: [
+            "Interactive workshops and hands-on sessions",
+            "Networking opportunities with industry leaders",
+            "Expert-led panel discussions",
+            "Exhibition area featuring latest technologies"
+          ]
+        },
+
+        "Creative Design Summit 2025": {
+          category: "Design",
+          image: "img/design.jpeg",
+          date: "April 5, 2025",
+          time: "10:00 AM - 5:00 PM",
+          location: "Manchester Design Centre",
+          attendees: "1200+ Attendees",
+          price: "From £149",
+          description1: "Creative Design Summit brings together leading designers, digital creators, and creative strategists to explore the future of design and innovation.",
+          description2: "Attendees can expect inspiring talks, practical sessions, and opportunities to learn from professionals shaping modern design across different industries.",
+          schedule: [
+            { time: "10:00 AM", title: "Registration & Welcome Coffee", text: "Meet attendees and settle in before the opening session" },
+            { time: "11:00 AM", title: "Design Trends Keynote", text: "A look at the future of design and creative industries" },
+            { time: "1:30 PM", title: "Creative Workshop Session", text: "Interactive design workshop with industry professionals" }
+          ],
+          speakers: [
+            { img: "img/person_1.jpeg", name: "Olivia Hart", role: "Creative Director, North Studio" },
+            { img: "img/person_2.jpeg", name: "Daniel Reed", role: "Brand Strategist, MotionLab" },
+            { img: "img/person_3.jpeg", name: "Sophie Lane", role: "UX Consultant, Design Forward" }
+          ],
+          highlights: [
+            "Live creative workshops",
+            "Inspiration from design leaders",
+            "Portfolio and branding discussions",
+            "Networking with creative professionals"
+          ]
+        },
+
+        "Business Leadership Forum 2025": {
+          category: "Business",
+          image: "img/forum.webp",
+          date: "May 20, 2025",
+          time: "9:00 AM - 5:30 PM",
+          location: "Edinburgh Conference Centre",
+          attendees: "1500+ Attendees",
+          price: "From £199",
+          description1: "Business Leadership Forum is designed for professionals, founders, and decision-makers looking to strengthen leadership skills and gain strategic insight.",
+          description2: "The forum combines keynote sessions, leadership panels, and networking opportunities to help attendees grow professionally and connect with other business leaders.",
+          schedule: [
+            { time: "9:00 AM", title: "Morning Registration", text: "Arrival, networking breakfast, and opening welcome" },
+            { time: "10:00 AM", title: "Leadership in Modern Business", text: "Keynote session from a leading business speaker" },
+            { time: "1:00 PM", title: "Executive Panel Discussion", text: "Insights from experienced entrepreneurs and industry leaders" }
+          ],
+          speakers: [
+            { img: "img/person_2.jpeg", name: "James Turner", role: "CEO, Turner Advisory" },
+            { img: "img/person_3.jpeg", name: "Rachel Cole", role: "Founder, Business Elevate" },
+            { img: "img/person_1.jpeg", name: "Nathan Wells", role: "Leadership Consultant, Vision Group" }
+          ],
+          highlights: [
+            "Leadership-focused keynote sessions",
+            "Business strategy and growth discussions",
+            "Networking with professionals and founders",
+            "Panel sessions with experienced executives"
+          ]
+        },
+
+        "Digital Marketing Conference 2025": {
+          category: "Marketing",
+          image: "img/digital-marketing-uk.jpeg",
+          date: "June 10, 2025",
+          time: "10:00 AM - 4:30 PM",
+          location: "Birmingham Business Hub",
+          attendees: "1000+ Attendees",
+          price: "From £179",
+          description1: "Digital Marketing Conference explores the latest strategies in brand growth, digital campaigns, audience engagement, and content performance.",
+          description2: "This event is ideal for marketers, business owners, and digital professionals who want to stay up to date with evolving marketing trends.",
+          schedule: [
+            { time: "10:00 AM", title: "Welcome & Industry Overview", text: "Opening session on current digital marketing trends" },
+            { time: "11:30 AM", title: "Campaign Strategy Workshop", text: "Practical session focused on campaign planning and optimisation" },
+            { time: "2:00 PM", title: "Content & Brand Growth Panel", text: "Discussion with experts on scaling digital reach" }
+          ],
+          speakers: [
+            { img: "img/person_1.jpeg", name: "Chloe Bennett", role: "Digital Strategist, MarketLab" },
+            { img: "img/person_2.jpeg", name: "Ryan Foster", role: "Campaign Director, MediaWorks" },
+            { img: "img/person_3.jpeg", name: "Hannah Brooks", role: "Brand Consultant, Elevate Digital" }
+          ],
+          highlights: [
+            "Latest digital marketing insights",
+            "Brand and campaign optimisation strategies",
+            "Expert panel discussions",
+            "Networking with marketing professionals"
+          ]
+        },
+
+        "AI & Machine Learning Summit 2025": {
+          category: "Technology",
+          image: "img/International-Conference-on-Artificial-Intelligence-and-Machine-Learning.webp",
+          date: "July 15, 2025",
+          time: "9:30 AM - 5:30 PM",
+          location: "London Innovation Hall",
+          attendees: "1800+ Attendees",
+          price: "From £299",
+          description1: "AI & Machine Learning Summit focuses on emerging technologies, practical machine learning applications, and the future of artificial intelligence across industries.",
+          description2: "This event offers expert talks, specialist sessions, and networking for professionals interested in data, automation, and intelligent systems.",
+          schedule: [
+            { time: "9:30 AM", title: "Registration & Opening", text: "Meet attendees and prepare for the day’s sessions" },
+            { time: "10:30 AM", title: "AI in Practice", text: "Industry keynote on current real-world applications of AI" },
+            { time: "1:30 PM", title: "Machine Learning Roundtable", text: "Panel discussion on research, innovation, and future trends" }
+          ],
+          speakers: [
+            { img: "img/person_3.jpeg", name: "Dr. Leo Zhang", role: "AI Research Director, Future Labs" },
+            { img: "img/person_2.jpeg", name: "Aisha Khan", role: "Data Science Lead, Neural Systems" },
+            { img: "img/person_1.jpeg", name: "Emily Carter", role: "ML Product Specialist, InnovateAI" }
+          ],
+          highlights: [
+            "Specialist AI and ML sessions",
+            "Expert-led discussions and panels",
+            "Industry networking opportunities",
+            "Insights into future technological developments"
+          ]
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const selectedEvent = params.get("event") || "TechConnect 2025";
+      const currentEvent = eventDetailsData[selectedEvent] || eventDetailsData["TechConnect 2025"];
+
+      document.getElementById("eventCategory").textContent = currentEvent.category;
+      document.getElementById("eventTitle").textContent = selectedEvent;
+      document.getElementById("eventImage").src = currentEvent.image;
+      document.getElementById("eventImage").alt = selectedEvent;
+      document.getElementById("eventDate").textContent = currentEvent.date;
+      document.getElementById("eventTime").textContent = currentEvent.time;
+      document.getElementById("eventLocation").textContent = currentEvent.location;
+      document.getElementById("eventAttendees").textContent = currentEvent.attendees;
+      document.getElementById("eventPrice").textContent = currentEvent.price;
+      document.getElementById("eventDescription1").textContent = currentEvent.description1;
+      document.getElementById("eventDescription2").textContent = currentEvent.description2;
+
+      document.getElementById("bookButton").href = `booking.html?event=${encodeURIComponent(selectedEvent)}`;
+      document.getElementById("headerBookBtn").href = `booking.html?event=${encodeURIComponent(selectedEvent)}`;
+
+      const scheduleList = document.getElementById("eventSchedule");
+      scheduleList.innerHTML = currentEvent.schedule.map(item => `
+        <li class="schedule-item">
+          <div class="schedule-time">${item.time}</div>
+          <div class="schedule-content">
+            <h4>${item.title}</h4>
+            <p>${item.text}</p>
+          </div>
+        </li>
+      `).join("");
+
+      document.getElementById("speaker1Img").src = currentEvent.speakers[0].img;
+      document.getElementById("speaker1Name").textContent = currentEvent.speakers[0].name;
+      document.getElementById("speaker1Role").textContent = currentEvent.speakers[0].role;
+
+      document.getElementById("speaker2Img").src = currentEvent.speakers[1].img;
+      document.getElementById("speaker2Name").textContent = currentEvent.speakers[1].name;
+      document.getElementById("speaker2Role").textContent = currentEvent.speakers[1].role;
+
+      document.getElementById("speaker3Img").src = currentEvent.speakers[2].img;
+      document.getElementById("speaker3Name").textContent = currentEvent.speakers[2].name;
+      document.getElementById("speaker3Role").textContent = currentEvent.speakers[2].role;
+
+      const highlightsList = document.getElementById("eventHighlights");
+      highlightsList.innerHTML = currentEvent.highlights.map(item => `
+        <li style="margin-bottom: 1rem;">
+          <i class="fas fa-check-circle" style="color: var(--accent-color); margin-right: 0.5rem;"></i>
+          ${item}
+        </li>
+      `).join("");
+
       document.addEventListener('DOMContentLoaded', function() {
         const header = document.querySelector('.header');
         window.addEventListener('scroll', () => {
@@ -204,11 +379,9 @@
 
         const eventImage = document.querySelector('.event-image');
         let isExpanded = false;
-        let originalPosition;
 
         eventImage.addEventListener('click', function() {
           if (!isExpanded) {
-            originalPosition = eventImage.getBoundingClientRect();
             eventImage.style.position = 'fixed';
             eventImage.style.top = '50%';
             eventImage.style.left = '50%';

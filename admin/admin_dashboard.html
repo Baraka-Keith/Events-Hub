@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EventHub UK</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        .admin-shell {
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: #0f172a;
+            color: white;
+            padding: 1.5rem 1.2rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+        }
+
+        .brand h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .sidebar small {
+            color: #94a3b8;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .side-nav {
+            display: grid;
+            gap: 0.65rem;
+            margin-top: 2rem;
+        }
+
+        .side-nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.03);
+            transition: 0.2s ease;
+        }
+
+        .side-nav a:hover,
+        .side-nav a.active {
+            background: #1e293b;
+            color: #fff;
+        }
+
+        .sidebar-note {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.05);
+            color: #cbd5e1;
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        .main {
+            padding: 2rem;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .topbar h1 {
+            margin: 0;
+            color: #1e3a8a;
+            font-size: 2rem;
+        }
+
+        .topbar p {
+            margin: 0.4rem 0 0;
+            color: #64748b;
+        }
+
+        .admin-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #e0ecff;
+            color: #1d4ed8;
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card,
+        .panel,
+        .activity-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        }
+
+        .stat-card h3 {
+            margin: 0 0 0.5rem;
+            color: #64748b;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-card .sub {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .panel h2,
+        .activity-card h2 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .action-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1rem;
+            background: #f8fbff;
+        }
+
+        .action-box h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1rem;
+            color: #1f2937;
+        }
+
+        .action-box p {
+            margin: 0 0 0.8rem;
+            color: #475569;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .action-box a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .list {
+            display: grid;
+            gap: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            background: #f8fbff;
+        }
+
+        .list-item h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1rem;
+            color: #1f2937;
+        }
+
+        .list-item p {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.94rem;
+        }
+
+        .status {
+            white-space: nowrap;
+            align-self: center;
+            font-size: 0.84rem;
+            font-weight: 700;
+            padding: 0.45rem 0.7rem;
+            border-radius: 999px;
+        }
+
+        .status.live { background: #dcfce7; color: #166534; }
+        .status.pending { background: #fef3c7; color: #92400e; }
+        .status.review { background: #dbeafe; color: #1d4ed8; }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .activity-card p {
+            color: #475569;
+            line-height: 1.75;
+        }
+
+        .activity-card ul {
+            margin: 1rem 0 0;
+            padding-left: 1.2rem;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1100px) {
+            .stats-grid,
+            .activity-grid,
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .admin-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="../img/logo.png" alt="EventHub Logo">
+                <div>
+                    <h2>EventHub Admin</h2>
+                    <small>Management Panel</small>
+                </div>
+            </div>
+
+            <nav class="side-nav">
+                <a href="admin_dashboard.html" class="active"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="admin_events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a>
+                <a href="admin_bookings.html"><i class="fas fa-ticket-alt"></i> Bookings</a>
+                <a href="admin_support.html"><i class="fas fa-headset"></i> Support Requests</a>
+                <a href="../home.html"><i class="fas fa-globe"></i> View Public Site</a>
+            </nav>
+
+            <div class="sidebar-note">
+                This admin dashboard supports event management, booking oversight, and customer support workflows.
+                It also supports collaboration with database and security roles by showing structured records and controlled admin actions.
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="topbar">
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Overview of events, bookings, platform activity, and support operations.</p>
+                </div>
+                <div class="admin-chip">
+                    <i class="fas fa-shield-alt"></i>
+                    Secure Admin Access
+                </div>
+            </div>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Active Events</h3>
+                    <div class="value">12</div>
+                    <div class="sub">Across technology, business, design, and marketing</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Bookings</h3>
+                    <div class="value">1,248</div>
+                    <div class="sub">Current bookings across live event listings</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Open Support Requests</h3>
+                    <div class="value">18</div>
+                    <div class="sub">Pending review or follow-up</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Admin Alerts</h3>
+                    <div class="value">4</div>
+                    <div class="sub">Items awaiting manual review</div>
+                </div>
+            </section>
+
+            <section class="dashboard-grid">
+                <div class="panel">
+                    <h2>Quick Actions</h2>
+                    <div class="quick-actions">
+                        <div class="action-box">
+                            <h3>Create New Event</h3>
+                            <p>Add a new event listing with category, pricing, location, and availability details.</p>
+                            <a href="admin_events.html">Go to events</a>
+                        </div>
+                        <div class="action-box">
+                            <h3>Review Bookings</h3>
+                            <p>Monitor booking records, ticket types, and platform activity by attendee.</p>
+                            <a href="admin_bookings.html">View bookings</a>
+                        </div>
+                        <div class="action-box">
+                            <h3>Check Support Queue</h3>
+                            <p>Track incoming support requests linked to bookings, access needs, or general enquiries.</p>
+                            <a href="admin_support.html">Open support</a>
+                        </div>
+                        <div class="action-box">
+                            <h3>Public Site Review</h3>
+                            <p>Quickly move between the admin view and public pages for QA and content checks.</p>
+                            <a href="../home.html">Open website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>Recent Admin Activity</h2>
+                    <div class="list">
+                        <div class="list-item">
+                            <div>
+                                <h3>TechConnect 2025</h3>
+                                <p>Event details reviewed and booking flow verified</p>
+                            </div>
+                            <span class="status live">Live</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div>
+                                <h3>Support Queue Update</h3>
+                                <p>4 requests marked for follow-up by admin team</p>
+                            </div>
+                            <span class="status pending">Pending</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div>
+                                <h3>Pricing Review</h3>
+                                <p>Student discount model aligned with standard pricing</p>
+                            </div>
+                            <span class="status review">Review</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="activity-grid">
+                <div class="activity-card">
+                    <h2>Operations</h2>
+                    <p>Track the status of live events, maintain page consistency, and monitor listing quality across the platform.</p>
+                    <ul>
+                        <li>Review event content before publishing</li>
+                        <li>Monitor category coverage</li>
+                        <li>Check booking page alignment</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card">
+                    <h2>Security Awareness</h2>
+                    <p>This area can support the security consultant role by demonstrating controlled admin access and role-sensitive actions.</p>
+                    <ul>
+                        <li>Admin-only navigation area</li>
+                        <li>Restricted management actions</li>
+                        <li>Clear operational oversight</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card">
+                    <h2>Data Oversight</h2>
+                    <p>This dashboard also supports database planning by showing how event, booking, and support information can be managed in structured views.</p>
+                    <ul>
+                        <li>Event records</li>
+                        <li>Booking tables</li>
+                        <li>Support request logs</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Requests - EventHub UK</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fb; color: #1f2937; }
+        .admin-shell { display: grid; grid-template-columns: 270px 1fr; min-height: 100vh; }
+        .sidebar { background: #0f172a; color: white; padding: 1.5rem 1.2rem; }
+        .brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 2rem; }
+        .brand img { width: 42px; height: 42px; }
+        .brand h2 { margin: 0; font-size: 1.2rem; }
+        .brand small { color: #94a3b8; }
+        .side-nav { display: grid; gap: 0.65rem; margin-top: 2rem; }
+        .side-nav a {
+            color: #cbd5e1; text-decoration: none; padding: 0.85rem 1rem;
+            border-radius: 12px; background: rgba(255,255,255,0.03);
+        }
+        .side-nav a.active, .side-nav a:hover { background: #1e293b; color: #fff; }
+
+        .main { padding: 2rem; }
+        .topbar { margin-bottom: 2rem; }
+        .topbar h1 { margin: 0; color: #1e3a8a; }
+        .topbar p { margin: 0.4rem 0 0; color: #64748b; }
+
+        .request-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .request-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        }
+
+        .request-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .request-head h2 {
+            margin: 0 0 0.4rem;
+            color: #1f2937;
+            font-size: 1.15rem;
+        }
+
+        .request-head p {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.45rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .new { background: #dbeafe; color: #1d4ed8; }
+        .open { background: #fef3c7; color: #92400e; }
+        .resolved { background: #dcfce7; color: #166534; }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta-box {
+            padding: 0.9rem 1rem;
+            border-radius: 12px;
+            background: #f8fbff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .meta-box h3 {
+            margin: 0 0 0.35rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .meta-box p {
+            margin: 0;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .message-box {
+            padding: 1rem 1.1rem;
+            border-left: 4px solid #2563eb;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #eff6ff, #f8fbff);
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .action-link {
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            background: #eef4ff;
+            color: #2563eb;
+        }
+
+        .primary-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        @media (max-width: 1100px) {
+            .meta-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 850px) {
+            .admin-shell { grid-template-columns: 1fr; }
+            .meta-grid { grid-template-columns: 1fr; }
+            .request-head { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="../img/logo.png" alt="EventHub Logo">
+                <div>
+                    <h2>EventHub Admin</h2>
+                    <small>Management Panel</small>
+                </div>
+            </div>
+
+            <nav class="side-nav">
+                <a href="admin_dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="admin_events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a>
+                <a href="admin_bookings.html"><i class="fas fa-ticket-alt"></i> Bookings</a>
+                <a href="admin_support.html" class="active"><i class="fas fa-headset"></i> Support Requests</a>
+                <a href="../home.html"><i class="fas fa-globe"></i> View Public Site</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="topbar">
+                <h1>Support Requests</h1>
+                <p>Track user enquiries, booking issues, accessibility requests, and event-related support messages.</p>
+            </div>
+
+            <section class="request-grid">
+                <article class="request-card">
+                    <div class="request-head">
+                        <div>
+                            <h2>Booking Clarification Request</h2>
+                            <p>Submitted by Amina Yusuf</p>
+                        </div>
+                        <span class="status new">New</span>
+                    </div>
+
+                    <div class="meta-grid">
+                        <div class="meta-box">
+                            <h3>Topic</h3>
+                            <p>Booking Support</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Related Event</h3>
+                            <p>Business Leadership Forum 2025</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Email</h3>
+                            <p>amina@example.com</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Priority</h3>
+                            <p>Normal</p>
+                        </div>
+                    </div>
+
+                    <div class="message-box">
+                        I would like to confirm whether the standard ticket includes access to networking sessions after the final keynote.
+                    </div>
+
+                    <div class="actions">
+                        <a href="mailto:info@eventhub.co.uk" class="action-link primary-btn">Reply</a>
+                        <a href="#in-progress" class="action-link">Mark In Progress</a>
+                        <a href="admin_bookings.html" class="action-link">View Booking</a>
+                    </div>
+                </article>
+
+                <article class="request-card">
+                    <div class="request-head">
+                        <div>
+                            <h2>Accessibility Request</h2>
+                            <p>Submitted by Daniel Reed</p>
+                        </div>
+                        <span class="status open">Open</span>
+                    </div>
+
+                    <div class="meta-grid">
+                        <div class="meta-box">
+                            <h3>Topic</h3>
+                            <p>Accessibility</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Related Event</h3>
+                            <p>Creative Design Summit 2025</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Email</h3>
+                            <p>daniel@example.com</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Priority</h3>
+                            <p>High</p>
+                        </div>
+                    </div>
+
+                    <div class="message-box">
+                        I would like to request advance information regarding venue accessibility and step-free access before completing my booking.
+                    </div>
+
+                    <div class="actions">
+                        <a href="mailto:info@eventhub.co.uk" class="action-link primary-btn">Reply</a>
+                        <a href="#escalated" class="action-link">Escalate</a>
+                        <a href="admin_dashboard.html" class="action-link">Assign Admin</a>
+                    </div>
+                </article>
+
+                <article class="request-card">
+                    <div class="request-head">
+                        <div>
+                            <h2>General Platform Enquiry</h2>
+                            <p>Submitted by Rachel Cole</p>
+                        </div>
+                        <span class="status resolved">Resolved</span>
+                    </div>
+
+                    <div class="meta-grid">
+                        <div class="meta-box">
+                            <h3>Topic</h3>
+                            <p>General Enquiry</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Related Event</h3>
+                            <p>Not Event Specific</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Email</h3>
+                            <p>rachel@example.com</p>
+                        </div>
+                        <div class="meta-box">
+                            <h3>Priority</h3>
+                            <p>Normal</p>
+                        </div>
+                    </div>
+
+                    <div class="message-box">
+                        I wanted to know whether EventHub UK plans to expand the number of business-focused events later this year.
+                    </div>
+
+                    <div class="actions">
+                        <a href="mailto:info@eventhub.co.uk" class="action-link">View Response</a>
+                        <a href="#archived" class="action-link">Archive</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

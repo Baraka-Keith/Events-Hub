@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - EventHub UK</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/home.css">
+
+    <style>
+        .page-banner {
+            margin-top: 77px;
+            padding: 5.5rem 1rem 4.5rem;
+            background:
+                linear-gradient(rgba(15, 23, 42, 0.70), rgba(30, 64, 175, 0.55)),
+                url('img/contact-banner.jpg') center/cover no-repeat;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .page-banner p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            opacity: 0.96;
+        }
+
+        .support-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .support-card,
+        .form-card,
+        .info-card,
+        .cta-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        }
+
+        .support-card h2,
+        .form-card h2,
+        .info-card h2,
+        .cta-card h2 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        .support-options {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .option-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            background: #f8fbff;
+        }
+
+        .option-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .option-item h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.05rem;
+            color: #1f2937;
+        }
+
+        .option-item p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .response-box {
+            margin-top: 1.4rem;
+            padding: 1.1rem 1.2rem;
+            border-left: 4px solid #2563eb;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #eff6ff, #f8fbff);
+        }
+
+        .response-box p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.75;
+        }
+
+        .form-intro {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 0.98rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .submit-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            background: white;
+            padding: 0.85rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            text-align: left;
+        }
+
+        .info-card h3 {
+            margin-top: 0.8rem;
+            margin-bottom: 0.6rem;
+            color: #1f2937;
+            font-size: 1.05rem;
+        }
+
+        .info-card p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.75;
+        }
+
+        .info-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #dbeafe, #eef4ff);
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .cta-card {
+            margin-top: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fbff, #eef4ff);
+        }
+
+        .cta-card p {
+            max-width: 720px;
+            margin: 0 auto 1.2rem;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        .cta-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 950px) {
+            .support-grid,
+            .info-grid,
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="img/logo.png" alt="EventHub Logo">
+                <span>EventHub</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="event_details.html?event=TechConnect%202025" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <h1>How Can We Help?</h1>
+        <p>
+            Whether you have a booking question, need help understanding ticket options,
+            or want support before attending an event, EventHub UK is here to help make
+            the process simple and professional.
+        </p>
+    </section>
+
+    <main class="support-section">
+        <div class="support-grid">
+            <section class="support-card">
+                <h2>Support Options</h2>
+                <p class="form-intro">
+                    Our support page is designed to help users quickly find the right
+                    guidance, whether the question is about booking, event information,
+                    accessibility, or account-related enquiries.
+                </p>
+
+                <div class="support-options">
+                    <div class="option-item">
+                        <div class="option-icon"><i class="fas fa-ticket-alt"></i></div>
+                        <div>
+                            <h3>Booking Support</h3>
+                            <p>Get help with ticket selection, booking details, confirmation questions, and event attendance guidance.</p>
+                        </div>
+                    </div>
+
+                    <div class="option-item">
+                        <div class="option-icon"><i class="fas fa-universal-access"></i></div>
+                        <div>
+                            <h3>Accessibility Requests</h3>
+                            <p>Contact us if you need to discuss access arrangements, attendance support, or any practical requirements in advance.</p>
+                        </div>
+                    </div>
+
+                    <div class="option-item">
+                        <div class="option-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div>
+                            <h3>Event Information</h3>
+                            <p>Ask questions about venues, timings, ticket types, entry conditions, or event-related changes before booking.</p>
+                        </div>
+                    </div>
+
+                    <div class="option-item">
+                        <div class="option-icon"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <h3>General Assistance</h3>
+                            <p>Use the support form for general platform enquiries, guidance on using EventHub UK, or help finding the right event.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-box">
+                    <p>
+                        <strong>Response Guidance:</strong> Support enquiries are usually reviewed within
+                        1–2 business days. For event-specific requests, earlier contact is recommended
+                        so that organisers have time to respond where needed.
+                    </p>
+                </div>
+            </section>
+
+            <section class="form-card">
+                <h2>Send a Support Request</h2>
+                <p class="form-intro">
+                    Complete the form below and a member of the EventHub UK team will review your enquiry.
+                    This form can be used for booking questions, accessibility requests, event clarification,
+                    or general support.
+                </p>
+
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address</label>
+                            <input type="email" id="emailAddress" placeholder="Enter your email address">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="supportType">Support Topic</label>
+                            <select id="supportType">
+                                <option>Booking Support</option>
+                                <option>Accessibility Request</option>
+                                <option>Event Information</option>
+                                <option>General Enquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectedEvent">Related Event</label>
+                            <select id="selectedEvent">
+                                <option>TechConnect 2025</option>
+                                <option>Creative Design Summit 2025</option>
+                                <option>Business Leadership Forum 2025</option>
+                                <option>Digital Marketing Conference 2025</option>
+                                <option>AI & Machine Learning Summit 2025</option>
+                                <option>Not Event Specific</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Enter a short subject for your enquiry">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="7" placeholder="Tell us how we can help"></textarea>
+                    </div>
+
+                    <div class="submit-row">
+                        <button type="button" class="cta-button">Submit Request</button>
+                        <a href="faq.html" class="secondary-btn">View FAQs</a>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h3>Clear Communication</h3>
+                <p>Users can contact EventHub UK before booking to reduce uncertainty and understand event expectations more clearly.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Trusted Support</h3>
+                <p>The support flow is designed to make the platform feel more complete, reliable, and realistic as a professional event service.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-clock"></i></div>
+                <h3>Faster Guidance</h3>
+                <p>Quick access to FAQs, terms, and direct support reduces confusion and helps users move through the booking journey with confidence.</p>
+            </div>
+        </div>
+
+        <div class="cta-card">
+            <h2>Need Answers Before You Submit?</h2>
+            <p>
+                You may be able to find the information you need more quickly by checking our FAQ page
+                or reviewing the booking terms and conditions before sending a request.
+            </p>
+            <div class="cta-links">
+                <a href="faq.html" class="cta-button">Go to FAQs</a>
+                <a href="terms.html" class="secondary-btn">View Terms</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>EventHub</h3>
+                <p>Your gateway to professional growth and networking across the UK.</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email">
+                    <button class="newsletter-button">Subscribe</button>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="events.html">Browse Events</a>
+                <a href="how_it_works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQs</a>
+                <a href="contact.html">Support</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +44 20 7814 7568</p>
+                <p><i class="fas fa-envelope"></i> info@eventhub.co.uk</p>
+                <p><i class="fas fa-map-marker-alt"></i> Regent Street, London, UK</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

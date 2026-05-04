@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings - EventHub UK</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fb; color: #1f2937; }
+        .admin-shell { display: grid; grid-template-columns: 270px 1fr; min-height: 100vh; }
+        .sidebar { background: #0f172a; color: white; padding: 1.5rem 1.2rem; }
+        .brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 2rem; }
+        .brand img { width: 42px; height: 42px; }
+        .brand h2 { margin: 0; font-size: 1.2rem; }
+        .brand small { color: #94a3b8; }
+        .side-nav { display: grid; gap: 0.65rem; margin-top: 2rem; }
+        .side-nav a {
+            color: #cbd5e1; text-decoration: none; padding: 0.85rem 1rem;
+            border-radius: 12px; background: rgba(255,255,255,0.03);
+        }
+        .side-nav a.active, .side-nav a:hover { background: #1e293b; color: #fff; }
+
+        .main { padding: 2rem; }
+        .topbar { margin-bottom: 2rem; }
+        .topbar h1 { margin: 0; color: #1e3a8a; }
+        .topbar p { margin: 0.4rem 0 0; color: #64748b; }
+
+        .filter-bar,
+        .table-card,
+        .summary-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        }
+
+        .filter-bar {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-bar input,
+        .filter-bar select {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 0.98rem;
+        }
+
+        .table-card h2,
+        .summary-card h2 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        th { background: #f8fbff; color: #1e3a8a; }
+
+        .status {
+            display: inline-block;
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .confirmed { background: #dcfce7; color: #166534; }
+        .pending { background: #fef3c7; color: #92400e; }
+        .review { background: #dbeafe; color: #1d4ed8; }
+
+        .action-link {
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: #eef4ff;
+            color: #2563eb;
+            display: inline-block;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .summary-box {
+            padding: 1rem;
+            border-radius: 14px;
+            background: #f8fbff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .summary-box h3 {
+            margin: 0 0 0.4rem;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .summary-box .value {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #1e3a8a;
+        }
+
+        @media (max-width: 1100px) {
+            .filter-bar,
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .admin-shell { grid-template-columns: 1fr; }
+            .table-card { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="../img/logo.png" alt="EventHub Logo">
+                <div>
+                    <h2>EventHub Admin</h2>
+                    <small>Management Panel</small>
+                </div>
+            </div>
+
+            <nav class="side-nav">
+                <a href="admin_dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="admin_events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a>
+                <a href="admin_bookings.html" class="active"><i class="fas fa-ticket-alt"></i> Bookings</a>
+                <a href="admin_support.html"><i class="fas fa-headset"></i> Support Requests</a>
+                <a href="../home.html"><i class="fas fa-globe"></i> View Public Site</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="topbar">
+                <h1>Booking Management</h1>
+                <p>Monitor ticket records, attendee details, event totals, and booking status across the platform.</p>
+            </div>
+
+            <section class="filter-bar">
+                <input type="text" placeholder="Search attendee or booking">
+                <select>
+                    <option>All Events</option>
+                    <option>TechConnect 2025</option>
+                    <option>Creative Design Summit 2025</option>
+                    <option>Business Leadership Forum 2025</option>
+                </select>
+                <select>
+                    <option>All Ticket Types</option>
+                    <option>Standard</option>
+                    <option>Premium</option>
+                    <option>Student</option>
+                </select>
+                <select>
+                    <option>All Statuses</option>
+                    <option>Confirmed</option>
+                    <option>Pending</option>
+                    <option>Needs Review</option>
+                </select>
+            </section>
+
+            <section class="table-card">
+                <h2>Booking Records</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Attendee</th>
+                            <th>Event</th>
+                            <th>Ticket</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BK-1042</td>
+                            <td>Theo Mensah</td>
+                            <td>TechConnect 2025</td>
+                            <td>Premium</td>
+                            <td>1</td>
+                            <td>£749</td>
+                            <td><span class="status confirmed">Confirmed</span></td>
+                            <td><a href="../booking.html?event=TechConnect%202025" class="action-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>BK-1043</td>
+                            <td>Amina Yusuf</td>
+                            <td>Business Leadership Forum 2025</td>
+                            <td>Standard</td>
+                            <td>2</td>
+                            <td>£998</td>
+                            <td><span class="status confirmed">Confirmed</span></td>
+                            <td><a href="../booking.html?event=Business%20Leadership%20Forum%202025" class="action-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>BK-1044</td>
+                            <td>Daniel Reed</td>
+                            <td>Creative Design Summit 2025</td>
+                            <td>Student</td>
+                            <td>1</td>
+                            <td>£149</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td><a href="../booking.html?event=Creative%20Design%20Summit%202025" class="action-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>BK-1045</td>
+                            <td>Rachel Cole</td>
+                            <td>Digital Marketing Conference 2025</td>
+                            <td>Standard</td>
+                            <td>1</td>
+                            <td>£449</td>
+                            <td><span class="status review">Needs Review</span></td>
+                            <td><a href="../booking.html?event=Digital%20Marketing%20Conference%202025" class="action-link">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="summary-card">
+                <h2>Booking Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-box">
+                        <h3>Total Bookings</h3>
+                        <div class="value">1,248</div>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Confirmed</h3>
+                        <div class="value">1,186</div>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Pending</h3>
+                        <div class="value">42</div>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Needs Review</h3>
+                        <div class="value">20</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+.nav-menu a.active {
+    color: #1e88e5;
+    font-weight: 800;
+}
+
+.page-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.page-hero {
+    margin-top: 77px;
+    padding: 5.5rem 1rem 4.5rem;
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.72), rgba(30, 64, 175, 0.52)),
+        url('../../img/main.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.page-hero h1 {
+    margin: 0 0 1rem;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.page-hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.08rem;
+}
+
+.notice {
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 700;
+}
+
+.error-box {
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    background: #fee2e2;
+    color: #991b1b;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.filters-panel,
+.form-panel,
+.details-panel,
+.table-panel {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.filters-panel {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filters-panel input,
+.filters-panel select,
+.form-panel input,
+.form-panel select,
+.form-panel textarea {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.98rem;
+}
+
+.form-panel label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.detail-grid,
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.detail-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.meta-list {
+    display: grid;
+    gap: 0.8rem;
+    margin: 1.2rem 0;
+}
+
+.meta-list div,
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ticket-option {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.8rem;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    background: #f8fbff;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.payment-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.35rem 0.65rem;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #dbe3ef;
+    border-radius: 12px;
+    background: #f8fbff;
+    cursor: pointer;
+}
+
+.payment-card input {
+    width: auto;
+    grid-row: span 2;
+}
+
+.payment-card span {
+    font-weight: 800;
+    color: #1f2937;
+}
+
+.payment-card small,
+.payment-note {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+.admin-link-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.table-panel {
+    overflow-x: auto;
+}
+
+.table-panel table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-panel th,
+.table-panel td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-panel th {
+    color: #1e3a8a;
+    background: #f8fbff;
+}
+
+.chat-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.request-list {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.request-link {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fbff;
+    color: #1f2937;
+    text-decoration: none;
+}
+
+.request-link.active {
+    border-color: #2563eb;
+    background: #eaf1ff;
+}
+
+.request-link span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.chat-thread {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    max-height: 520px;
+    overflow: auto;
+}
+
+.chat-message {
+    padding: 1rem;
+    border-radius: 14px;
+    background: #f8fbff;
+    border: 1px solid #e2e8f0;
+}
+
+.chat-message.admin {
+    background: #e0ecff;
+    border-color: #bfdbfe;
+}
+
+.chat-message small {
+    display: block;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+.chat-message p {
+    margin-bottom: 0;
+    line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+    .filters-panel,
+    .detail-grid,
+    .booking-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hero h1 {
+        font-size: 2.2rem;
+    }
+}
