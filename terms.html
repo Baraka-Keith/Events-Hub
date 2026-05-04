@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - EventHub UK</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/home.css">
+
+    <style>
+        .page-banner {
+            margin-top: 77px;
+            padding: 5.5rem 1rem 4.5rem;
+            background:
+                linear-gradient(rgba(15, 23, 42, 0.72), rgba(30, 64, 175, 0.62)),
+                url('img/terms_banner.png') center/cover no-repeat;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .page-banner p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.08rem;
+            opacity: 0.96;
+            line-height: 1.8;
+        }
+
+        .terms-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .terms-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .terms-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .sidebar-card,
+        .terms-card,
+        .notice-card,
+        .cta-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.6rem;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        }
+
+        .sidebar-card {
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-card h3,
+        .terms-card h2,
+        .notice-card h3,
+        .cta-card h3 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        .sidebar-links {
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .sidebar-links a {
+            text-decoration: none;
+            color: #334155;
+            padding: 0.7rem 0.9rem;
+            border-radius: 10px;
+            background: #f8fbff;
+            border: 1px solid #e2e8f0;
+            transition: 0.2s ease;
+        }
+
+        .sidebar-links a:hover {
+            background: #eef4ff;
+            color: #1d4ed8;
+        }
+
+        .mini-points {
+            display: grid;
+            gap: 0.8rem;
+            color: #475569;
+        }
+
+        .mini-points div {
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+            line-height: 1.6;
+        }
+
+        .mini-points i {
+            color: #2563eb;
+            margin-top: 0.2rem;
+        }
+
+        .terms-main {
+            display: grid;
+            gap: 1.4rem;
+        }
+
+        .terms-card {
+            padding: 2rem;
+        }
+
+        .terms-card h2 {
+            font-size: 1.35rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .terms-card p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.85;
+        }
+
+        .notice-card {
+            background: linear-gradient(135deg, #eff6ff, #f8fbff);
+            border-left: 4px solid #2563eb;
+        }
+
+        .notice-card p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.75;
+        }
+
+        .cta-card {
+            text-align: center;
+            background: linear-gradient(135deg, #f8fbff, #eef4ff);
+        }
+
+        .cta-card p {
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+            line-height: 1.8;
+        }
+
+        .cta-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            background: white;
+            padding: 0.85rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 950px) {
+            .terms-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .terms-sidebar {
+                position: static;
+            }
+
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
+            .sidebar-card h3 {
+    margin-bottom: 1rem;
+            }
+
+            .sidebar-links {
+                margin-top: 0.35rem;
+            }
+
+            .mini-points {
+                margin-top: 0.35rem;
+            }
+
+            .footer-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+
+            @media (max-width: 950px) {
+                .footer-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="img/logo.png" alt="EventHub Logo">
+                <span>EventHub</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="event_details.html?event=TechConnect%202025" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <h1>Terms & Conditions</h1>
+        <p>
+            These terms explain how EventHub UK operates, what users can expect when browsing
+            or booking events, and the responsibilities that apply when using the platform.
+        </p>
+    </section>
+
+    <main class="terms-section">
+        <div class="terms-layout">
+            <aside class="terms-sidebar">
+                <div class="sidebar-card">
+                    <h3>Quick Navigation</h3>
+                    <div class="sidebar-links">
+                        <a href="#bookings">Bookings</a>
+                        <a href="#payments">Payments</a>
+                        <a href="#cancellations">Cancellations & Changes</a>
+                        <a href="#responsibilities">User Responsibilities</a>
+                        <a href="#event-changes">Event Changes</a>
+                        <a href="#liability">Liability</a>
+                        <a href="#support">Support & Contact</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Key Points</h3>
+                    <div class="mini-points">
+                        <div><i class="fas fa-check-circle"></i><span>Bookings remain subject to availability.</span></div>
+                        <div><i class="fas fa-check-circle"></i><span>Ticket prices may vary by event and category.</span></div>
+                        <div><i class="fas fa-check-circle"></i><span>Refund and cancellation terms may differ by organiser.</span></div>
+                        <div><i class="fas fa-check-circle"></i><span>Users should ensure booking details are accurate.</span></div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="terms-main">
+                <div class="notice-card">
+                    <h3>Important Notice</h3>
+                    <p>
+                        EventHub UK acts as a professional event discovery and booking platform.
+                        While we aim to present accurate and up-to-date information, specific event
+                        delivery, schedules, and final arrangements may still depend on the organiser.
+                    </p>
+                </div>
+
+                <section class="terms-card" id="bookings">
+                    <h2>1. Bookings</h2>
+                    <p>
+                        All bookings made through EventHub UK are subject to availability at the time
+                        of request. A booking is considered complete only when the required details have
+                        been provided correctly and the booking has been accepted by the platform or
+                        relevant event organiser. Submission of a form alone does not always guarantee
+                        a final confirmed place where capacity limits apply.
+                    </p>
+                </section>
+
+                <section class="terms-card" id="payments">
+                    <h2>2. Payments</h2>
+                    <p>
+                        Where payment is required, users must provide accurate and valid information.
+                        Ticket prices may vary depending on the event, access level, ticket category,
+                        promotional availability, or organiser requirements. EventHub UK reserves the
+                        right to correct pricing errors where necessary and to communicate any relevant
+                        change before a booking is confirmed.
+                    </p>
+                </section>
+
+                <section class="terms-card" id="cancellations">
+                    <h2>3. Cancellations & Changes</h2>
+                    <p>
+                        Cancellation, transfer, and amendment policies may differ across events.
+                        Some bookings may be refundable within a stated period, while others may be
+                        non-refundable or transferable only under limited conditions. Users should review
+                        the event-specific information carefully before completing a booking, especially
+                        where premium, discounted, or student tickets are involved.
+                    </p>
+                </section>
+
+                <section class="terms-card" id="responsibilities">
+                    <h2>4. User Responsibilities</h2>
+                    <p>
+                        Users are responsible for ensuring that the booking details they submit are
+                        accurate, complete, and up to date. This includes names, email addresses, ticket
+                        selections, and any access or attendance information. Submission of misleading,
+                        false, or incomplete information may lead to delays, booking issues, or
+                        cancellation where appropriate.
+                    </p>
+                </section>
+
+                <section class="terms-card" id="event-changes">
+                    <h2>5. Event Changes</h2>
+                    <p>
+                        Event organisers and EventHub UK reserve the right to adjust event dates, times,
+                        venues, speakers, schedules, session availability, or other event details if
+                        required by operational, logistical, or unforeseen circumstances. Where possible,
+                        affected users should be informed using the contact details associated with the
+                        booking, so it is important to keep those details accurate.
+                    </p>
+                </section>
+
+                <section class="terms-card" id="liability">
+                    <h2>6. Liability</h2>
+                    <p>
+                        EventHub UK aims to provide a reliable platform experience and clear event
+                        information, but cannot guarantee that all published details will remain unchanged
+                        at all times. Responsibility for final event delivery, venue operations, speaker
+                        attendance, and on-site arrangements remains with the organiser. Users should make
+                        reasonable checks before travelling or attending where schedules are time-sensitive.
+                    </p>
+                </section>
+
+                <section class="terms-card" id="support">
+                    <h2>7. Support & Contact</h2>
+                    <p>
+                        If users have questions about these terms, a booking issue, or platform-related
+                        support request, they should contact EventHub UK through the contact page. Support
+                        enquiries may include booking clarification, accessibility requests, platform
+                        guidance, or general assistance linked to event participation.
+                    </p>
+                </section>
+
+                <div class="cta-card">
+                    <h3>Need Help Before Booking?</h3>
+                    <p>
+                        If you need help understanding ticket options, booking conditions, or event
+                        information, our support page can help you get in touch before completing your booking.
+                    </p>
+                    <div class="cta-row">
+                        <a href="contact.html" class="cta-button">Contact Support</a>
+                        <a href="faq.html" class="secondary-btn">View FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>EventHub</h3>
+                <p>Your gateway to professional growth and networking across the UK.</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email">
+                    <button class="newsletter-button">Subscribe</button>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="events.html">Browse Events</a>
+                <a href="how_it_works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQs</a>
+                <a href="contact.html">Support</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +44 20 7814 7568</p>
+                <p><i class="fas fa-envelope"></i> info@eventhub.co.uk</p>
+                <p><i class="fas fa-map-marker-alt"></i> Regent Street, London, UK</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
